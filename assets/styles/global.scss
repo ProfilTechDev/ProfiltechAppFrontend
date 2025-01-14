@@ -1,0 +1,59 @@
+@import "picoconfig.scss";
+@import "grid.scss";
+
+:root{
+    --theme-info: #17a2b8;
+    --theme-info-rgb: 23, 162, 184;
+    --theme-success: #28a745;
+    --theme-success-rgb: 40, 167, 69;
+    --theme-success-dark: #0a3313;
+    --theme-success-dark-rgb: 10, 51, 19;
+    --theme-warning: #ffc107;
+    --theme-warning-rgb: 255, 193, 7;
+    --theme-error: #dc3545;
+    --theme-error-rgb: 220, 53, 69;
+}
+
+
+/* Custom Styling */
+.app-container{
+    display: flex;
+    height: 100vh;
+    .content {
+        flex: 1;
+        height: 100%;
+        overflow: auto;
+        padding-left: 75px;
+
+        main {
+            padding: 2rem 2rem;
+            max-width: 2000px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.svg-inline--fa{
+    width: 20px;
+}
+
+li .vertical-line{
+    border-left: 1px solid var(--theme-muted-border-color);
+    height: 40px;
+}
+
+table{
+    td, th{
+        background: transparent;
+    }
+
+    &.noborder{
+        td, th{
+            border: 0px;
+        }
+    }
+}
+
+*{
+    box-sizing: border-box;
+}

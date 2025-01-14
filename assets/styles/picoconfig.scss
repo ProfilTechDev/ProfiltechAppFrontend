@@ -1,0 +1,105 @@
+@use "@picocss/pico/scss/pico" with (
+    $theme-color: "blue",
+    $css-var-prefix: "--theme-",
+    $enable-responsive-spacings: true,
+    $breakpoints: (
+        // Small (landscape phones)
+        // Font size: 17px
+        sm:
+            (
+            breakpoint: 576px,
+            viewport: 510px,
+            root-font-size: 106.25%,
+            ),
+
+        // Medium (tablets)
+        // Font size: 18px
+        md:
+            (
+            breakpoint: 768px,
+            viewport: 700px,
+            root-font-size: 112.5%,
+            ),
+
+        // Large
+        // Font size: 19px
+        lg:
+            (
+            breakpoint: 1024px,
+            viewport: 950px,
+            root-font-size: 118.75%,
+            ),
+
+        // Extra large
+        // Font size: 20px
+        xl:
+            (
+            breakpoint: 1280px,
+            viewport: 1200px,
+            root-font-size: 106%,
+            ),
+
+        // Extra extra large
+        // Font size: 21px
+        xxl:
+            (
+            breakpoint: 1536px,
+            viewport: 1450px,
+            root-font-size: 106%,
+            )
+    )
+);
+
+
+
+
+
+/* Orange color for light color scheme (Default) */
+[data-theme=light],
+:root:not([data-theme=dark]) {
+    --theme-background-color: #F3F4F6;
+    --theme-card-background-color: #FFFFFF;
+}
+
+/* Orange color for dark color scheme (Auto) */
+/* Automatically enabled if user has Dark mode enabled */
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --theme-background-color:  #1A202C;
+    --theme-card-background-color: #13171f;
+  }
+}
+/* Orange color for dark color scheme (Forced) */
+/* Enabled if forced with data-theme="dark" */
+[data-theme=dark] {
+    --theme-background-color:  #1A202C;
+    --theme-card-background-color: #13171f;
+
+}
+
+
+
+details.dropdown summary + ul li[role="link"] {
+    display: block;
+    margin: 5px 0;
+    padding: calc(var(--theme-form-element-spacing-vertical)* 0.5) var(--theme-form-element-spacing-horizontal);
+    overflow: hidden;
+    border-radius: 0;
+    color: var(--theme-dropdown-color);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--theme-dropdown-hover-background-color);
+    }
+}
+
+
+[role="link"] {
+    cursor: pointer;
+}
+
+small.muted{
+    color: var(--theme-muted-color);
+}
