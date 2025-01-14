@@ -1,5 +1,4 @@
 <template>
-    <h1>Tur: Sjælland 01/10-25</h1>
     <nav> 
       <ul>
         <li>
@@ -68,9 +67,13 @@
       </footer>
     </article>
   </template>
-  
-  
+
   <script setup>
+    definePageMeta({
+      title: 'Fragt',
+      metaTitle: 'Fragt',
+    })
+
     const categories = [
       'hele ordren',
       'stålplader',

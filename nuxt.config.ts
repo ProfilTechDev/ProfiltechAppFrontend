@@ -24,7 +24,12 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['nuxt-auth-sanctum', '@nuxtjs/tailwindcss'],
+  modules: [
+    'nuxt-auth-sanctum',
+    '@nuxtjs/tailwindcss',
+    'shadcn-nuxt',
+    '@nuxtjs/color-mode',
+  ],
 
   sanctum: {
     baseUrl: process.env.API_BASE_URL,
